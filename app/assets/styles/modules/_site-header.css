@@ -1,130 +1,80 @@
 .site-header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 65px;
-    background: $mainBlue;   
-    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.34);
-    z-index: 1;
-    
-    
-    @mixin clearfix;
-    @mixin atMedium {
-        height: auto;
-    }
-    
-    &__logo-container {
-        margin: .5rem 0;
-        position: relative;
-        left: 50%;
-        
-        @mixin atMedium {
-            float: left;
-            left: 10px;
-        }
-    }
-    
-    &__btn-container {
-        float: none;
-        text-align: right;
-        padding-top: 5px;
-        padding-bottom: 5px;
-        
-        @mixin atMedium {
-            float: right;
-            padding: 1.5rem 0;     
-        }
-    }
-    
-    &__menu-icon { 
-        position: absolute;
-        top: 22px;
-        right: 15px;
-        width: 25px;
-        height: 20px;
-        cursor: pointer;
-        transition: transform .5s ease-out;
-        
-        @mixin atMedium {
-            opacity: 0;
-            z-index: -1;
-        }
-        
-        &::before {
-            transform-origin: 0;
-            background: #fff;
-            position: absolute;
-            content: '';
-            height: 3px;
-            width: 25px;
-            top: 0;
-            transition: all .5s ease-out;
-        }
-        
-        &__middle {
-            background: #fff;
-            position: absolute;
-            height: 3px;
-            width: 25px;
-            top: 10px;
-            transition: all .5s ease-out;
-        }
-        
-        &::after {
-            transform-origin: 0 50%;
-            content: '';
-            background: #fff;
-            position: absolute;
-            height: 3px;
-            width: 25px;
-            top: 20px;
-            transition: all .5s ease-out;
-        }
-        
-        &--close-x {
-            transform: rotate(90deg);
-            
-            &::before {
-                transform: rotate(45deg) translateY(-2px);
-                width: 32px;
-            }
-            
-            .site-header__menu-icon__middle {
-                transform: scaleX(0);
-                opacity: 0;
-            }
-            
-            &::after {
-                transform: rotate(-45deg) translateY(2px);
-                width: 32px;
-            }
-        }
-    }
-    
-    &__menu-content {
-        opacity: 0;
-        z-index: -1;
-        visibility: hidden;
-        background: #f4f4f4;
-        padding: 10px 10px;
-        transform: translateY(-100%) scale(1.1);
-        transition: transform .3s ease-out;
-        
-        @mixin atMedium {
-            opacity: 1;
-            z-index: 1;
-            visibility: visible;
-            background: none;
-            padding: 0;
-            transform: translateY(0) scale(1);
-        }
-        
-        &--is-visible {
-            opacity: 1;
-            z-index: 5;
-            visibility: visible;
-            transform: translateY(0) scale(1);
-        }
-    }
-} 
+	&__menu-icon {
+		position: absolute;
+		top: 40px;
+		left: 40px;
+		width: 45px;
+		height: 40px;
+		cursor: pointer;
+		z-index: 100;
+		
+		&:before {
+			content: '';
+			position: absolute;
+			top: 0;
+			width: 35px;
+			height: 4px;
+			background: #fff;
+			transition: all .3s;
+		}
+		
+		&__middle {
+			position: absolute;
+			top: 20px;
+			width: 25px;
+			height: 4px;
+			background: #fff;
+			transition: all .4s;
+		}
+		
+		&:after {
+			content: '';
+			position: absolute;
+			top: 40px;
+			width: 35px;
+			height: 4px;
+			background: #fff;
+			transition: all .3s;
+		}
+		
+		&:hover {
+			&:before {
+				width: 45px;		
+			}
+			
+			.site-header__menu-icon__middle {
+				width: 45px;
+			}
+			
+			&:after {
+				width: 45px;		
+			}
+		}
+	}
+	
+	&__logo {
+		position: absolute;
+		top: 25px;
+		right: 20px;
+		text-transform: uppercase;
+		letter-spacing: 5px;
+		
+		a {
+			text-decoration: none;
+			color: #FFFFFF;
+		}
+		
+		.white {
+			background: rgba(#fff, .88);
+			color: #000;
+			padding: 5px;
+			padding-left: 7px;
+		}
+		
+		.black {
+			background: $mainBlack;
+			padding: 5px;
+			padding-left: 10px;
+		}
+	}
+}

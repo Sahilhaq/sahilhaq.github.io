@@ -1,20 +1,19 @@
 import $ from 'jquery';
 
 class MobileMenu {
-    /*constructor(){
-        this.menuIcon = $('.site-header__menu-icon');
-        this.menuContent = $('.site-header__menu-content');
-        this.event();
-    }
-    
-    event(){
-        this.menuIcon.click(this.toggleMenu.bind(this));
-    }
-
-    toggleMenu(){
-        this.menuContent.toggleClass('site-header__menu-content--is-visible');
-        this.menuIcon.toggleClass('site-header__menu-icon--close-x');
-    }*/
+    constructor() {
+		this.menuContent = $('.menu-content');
+		this.menuIcon = $('.site-header__menu-icon')
+		this.event();
+	}
+	
+	event() {
+		this.menuIcon.click(this.toggleClass.bind(this));
+	}
+	
+	toggleClass() {
+		this.menuContent.toggleClass('menu-content--is-visible');
+	}
 }
 
 export default MobileMenu;
