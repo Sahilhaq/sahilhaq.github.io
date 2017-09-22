@@ -1,0 +1,9 @@
+.contact {
+	background: $mainBlack;
+	height: 100vh;
+	
+	&__name, &__email, &__msg {
+		margin: 0 auto;
+		display: block;
+	}
+}
