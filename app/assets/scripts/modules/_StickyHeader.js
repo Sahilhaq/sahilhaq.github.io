@@ -5,7 +5,13 @@ import waypoints from '../../../../node_modules/waypoints/lib/noframework.waypoi
 class StickyHeader {
 	constructor() {
    	this.btn4 = $('.btn-4');
+		this.links = $('a')
 		this.onDocLoad();
+		this.addSmoothScrolling();
+	}
+	
+	addSmoothScrolling() {
+		this.links.smoothScroll();
 	}
 	
 	onDocLoad() {
