@@ -75,7 +75,7 @@
 				<div class="about">
 					<div class="about__top">
 						<div class="wrapper">
-							<h1 class="headline waypoint" data-animation="pull-to-right">About</h1>
+							<h1 class="headline waypoint pull-from-right" data-animation="pull-from-right--is-on">About</h1>
 						</div>	
 							<div class="row">
 								<div class="wrapper">
@@ -127,17 +127,17 @@
 								<div class="row__medium-4">
 									<div class="about__tools">
 										<div class="lang waypoint" data-animation="pull-to-left">
-											<h3>progaming Language i know</h3>
-											<p><span class="lang__icon"><i class="ion-social-javascript"></i></span>JavaScript</p>
-											<p><span class="lang__icon"><i class="ion-social-html5"></i></span>Html5</p>
-											<p><span class="lang__icon"><i class="ion-social-css3"></i></span>CSS3</p>
+											<h3 class="waypoint" data-animation="extend">progaming Language i know</h3>
+											<p class="waypoint pull-from-right" data-animation="pull-from-right--is-on"><span class="lang__icon"><i class="ion-social-javascript"></i></span>JavaScript</p>
+											<p class="waypoint pull-from-left" data-animation="pull-from-left--is-on"><span class="lang__icon"><i class="ion-social-html5"></i></span>Html5</p>
+											<p class="waypoint pull-from-right" data-animation="pull-from-right--is-on"><span class="lang__icon"><i class="ion-social-css3"></i></span>CSS3</p>
 										</div>
 										<div class="frameworks waypoint" data-animation="pull-to-left">
-											<h3>Frameworks i use</h3>
-											<p><span class="lang__icon">R</span>React</p>
-											<p><span class="lang__icon">R</span>Redux</p>
-											<p><span class="lang__icon">JQ</span>Jquery</p>
-											<p><span class="lang__icon"><i class="ion-social-twitter"></i></span>Bootstrap4</p>
+											<h3 class="waypoint" data-animation="extend">Frameworks i use</h3>
+											<p class="waypoint pull-from-left" data-animation="pull-from-left--is-on"><span class="lang__icon">R</span>React</p>
+											<p class="waypoint pull-from-right" data-animation="pull-from-right--is-on"><span class="lang__icon">R</span>Redux</p>
+											<p class="waypoint pull-from-left" data-animation="pull-from-left--is-on"><span class="lang__icon">JQ</span>Jquery</p>
+											<p class="waypoint pull-from-right" data-animation="pull-from-right--is-on"><span class="lang__icon"><i class="ion-social-twitter"></i></span>Bootstrap4</p>
 										</div>
 									</div>	
 								</div>
@@ -145,17 +145,17 @@
 								<div class="row__medium-4">
 									<div class="about__tools">
 										<div class="tools waypoint" data-animation="pull-to-left">
-											<h3>tools | others</h3>
-											<p><span class="lang__icon">W</span>Webpack</p>
-											<p><span class="lang__icon">G</span>Gulp</p>
-											<p><span class="lang__icon">B</span>Babel</p>
+											<h3 class="waypoint" data-animation="extend">tools | others</h3>
+											<p class="waypoint pull-from-left" data-animation="pull-from-left--is-on"><span class="lang__icon">W</span>Webpack</p>
+											<p class="waypoint pull-from-right" data-animation="pull-from-right--is-on"><span class="lang__icon">G</span>Gulp</p>
+											<p class="waypoint pull-from-left" data-animation="pull-from-left--is-on"><span class="lang__icon">B</span>Babel</p>
 										</div>
 										<div class="other waypoint" data-animation="pull-to-left">
-											<h3>Others</h3>
-											<p><span class="lang__icon"><i class="">G</i></span>Git</p>
-											<p><span class="lang__icon"><i class="ion-social-github"></i></span>github</p>
-											<p><span class="lang__icon"><i class="ion-social-wordpress"></i></span>Wordpress</p>
-											<p><span class="lang__icon">F</span>Firebase</p>
+											<h3 class="waypoint" data-animation="extend">Others</h3>
+											<p class="waypoint pull-from-right" data-animation="pull-from-right--is-on"><span class="lang__icon"><i class="">G</i></span>Git</p>
+											<p class="waypoint pull-from-left" data-animation="pull-from-left--is-on"><span class="lang__icon"><i class="ion-social-github"></i></span>github</p>
+											<p class="waypoint pull-from-right" data-animation="pull-from-right--is-on"><span class="lang__icon"><i class="ion-social-wordpress"></i></span>Wordpress</p>
+											<p class="waypoint pull-from-left" data-animation="pull-from-left--is-on"><span class="lang__icon">F</span>Firebase</p>
 										</div>
 									</div>	
 								</div>
@@ -166,19 +166,21 @@
 			</section>	
 	
 			<section id="contact" class="page-section contact">
-				<h1 class="headline">Message me</h1>
-				<p>Wanna work with me? wanna hire me? or simply wants to be friends ?</p>
-				
-				<form method="post" name="contact_form"
-					action="#">
-						 Your Name:
-						 <input type="text" name="name">
-						 Email Address:
-						 <input type="text" name="email">
-						 Message:
-						 <textarea name="message"></textarea>
-						 <input type="submit" value="Submit">
+				<h1 class="headline headline--small headline--sm-b-margin headline--no-after">KEEP IN TOUCH!</h1>
+				<p class="headline__text">I'LL GET BACK TO YOU AS QUICKLY AS POSSIBLE</p>
+
+				<div class="wrapper">
+					<form class="contact__form" method="post" name="contact_form"
+						action="#">
+							 Your Name:
+							 <input class="contact__name" type="text" name="name">
+							 Email Address:
+							 <input class="contact__email" type="text" name="email">
+							 Message:
+							 <textarea class="contanct__msg" name="message"></textarea>
+							 <input type="submit" value="Submit">
 					</form>
+				</div>	
 			</section>
 	
 	
