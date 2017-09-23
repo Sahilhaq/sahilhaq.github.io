@@ -451,9 +451,10 @@ template {
 }
 
 body {
-   font-family: 'Roboto', 'Arial', sans-serif;
+     font-family: 'Roboto', 'Arial', sans-serif;
 	text-rendering: optimizeLegibility; 
-   color: #555;
+    color: #555;
+    max-width: 1350px;
 }
 
 * {
@@ -952,8 +953,21 @@ body {
 			}
 
 .btn {
-    
+    border: none;
+    background: #44b2e2;
+    padding: 10px 20px;
+    color: #d6d6d6;
+    -webkit-box-shadow: 0 1px 2px #b0b0b0;
+            box-shadow: 0 1px 2px #b0b0b0;
 }
+
+.btn:hover {
+        background: #16a6cf;
+    }
+
+.btn--centerd {
+        margin: 0 auto;
+    }
 
 .page-section {
     padding-top: 20px;
@@ -1042,6 +1056,109 @@ body {
 .headline--no-after:after {
 			display: none;
 		}
+
+.nav-bar {
+    background: #fff;
+    height: 50px;
+    -webkit-box-shadow: 0 0 2px #909090;
+            box-shadow: 0 0 2px #909090;
+    opacity: 0;
+    -webkit-transition: all .3s ease;
+    transition: all .3s ease;
+}
+
+.nav-bar__menu-icon {
+        margin: 13px 8px 0 0;
+        float: right;
+        width: 30px;
+        height: 25px;
+        cursor: pointer;
+    }
+
+@media(min-width: 800px){
+
+.nav-bar__menu-icon { 
+            display: none; 
+            z-index: -10px
+    }
+    }
+
+.nav-bar__menu-icon:before {
+            content: '';
+            display: block;
+            background: #27272b;
+            width: 100%;
+            height: 2px;
+        }
+
+.nav-bar__menu-icon__middle {
+            background: #27272b;
+            width: 100%;
+            height: 2px;
+            margin-top: 8px;
+        }
+
+.nav-bar__menu-icon:after {
+            content: '';
+            display: block;
+            background: #27272b;
+            width: 100%;
+            height: 2px;
+            margin-top: 8px;
+        }
+
+.nav-bar--is-visible {
+        opacity: 1;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 1000;
+    }
+
+.nav-bar__logo { 
+        float: left;
+        margin-left: 10px;
+        margin-top: 15px;
+    }
+
+.nav-bar__primary-nav {
+        float: right;
+        display: none;
+    }
+
+@media(min-width: 800px){
+
+.nav-bar__primary-nav {
+            display: block
+    }
+    }
+
+.nav-bar ul {
+        list-style: none;
+    }
+
+.nav-bar li {
+        display: inline-block;
+        margin-right: 20px;
+    }
+
+.nav-bar li:last-child {
+         margin-right: 30px;
+    }
+
+.nav-bar li:last-child a { color: #ffffff; }
+
+.nav-bar a {
+        text-decoration: none;
+        color: #27272b;
+        -webkit-transition: all .3s ease-out;
+        transition: all .3s ease-out;
+    }
+
+.nav-bar a:hover {
+            color: rgba(68,178,226, .8);
+        }
 
 .row::after {
         content: '';
@@ -1466,6 +1583,10 @@ body {
 		margin-bottom: 20px;
 	}
 
+.about__top--large-b-margin {
+			margin-top: 45px;
+		}
+
 @media(min-width: 800px){
 
 .about__top {
@@ -1641,9 +1762,25 @@ body {
 	height: 100vh;
 }
 
+.contact__form {
+		max-width: 500px;
+		margin: 0 auto;
+	}
+
+.contact label {
+		top: -7px;
+	}
+
 .contact__name, .contact__email, .contact__msg {
 		margin: 0 auto;
 		display: block;
+		margin-bottom: 30px;
+		border: 0;
+		background: none;
+		border-bottom: 2px solid #9b9b9b;
+		width: 100%;
+		outline: none;
+		color: #bcbcbc;
 	}
 
 /* WAYPOINT ANIMATIONS */
@@ -1681,8 +1818,8 @@ body {
 	-webkit-transform: translateX(-100%);
 	        transform: translateX(-100%);
 	opacity: 0;
-	-webkit-transition: all .5s .6s ease-out;
-	transition: all .5s .6s ease-out;
+	-webkit-transition: all .5s .3s ease-out;
+	transition: all .5s .3s ease-out;
 }
 
 .pull-from-right--is-on {
@@ -1708,8 +1845,8 @@ body {
 	-webkit-transform: translateX(100%);
 	        transform: translateX(100%);
 	opacity: 0;
-	-webkit-transition: all .5s .6s ease-out;
-	transition: all .5s .6s ease-out;
+	-webkit-transition: all .5s .4s ease-out;
+	transition: all .5s .4s ease-out;
 }
 
 .pull-from-left--is-on {
@@ -1724,8 +1861,8 @@ body {
 	opacity: 0;
 	-webkit-transform: scale(1.2);
 	        transform: scale(1.2);
-	-webkit-transition: all 0.5s ease-out;
-	transition: all 0.5s ease-out;
+	-webkit-transition: all 0.5s 0.6s ease-out;
+	transition: all 0.5s 0.6s ease-out;
 }
 
 .reveal-item--is-visible {
@@ -1736,4 +1873,8 @@ body {
 
 .extend {
 	opacity: 1;
+}
+
+.current-link {
+	color: rgba(#44b2e2. .8);
 }

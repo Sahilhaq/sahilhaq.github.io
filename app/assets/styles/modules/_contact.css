@@ -1,9 +1,25 @@
 .contact {
 	background: $mainBlack;
 	height: 100vh;
+
+	&__form {
+		max-width: 500px;
+		margin: 0 auto;
+	}
+
+	label {
+		top: -7px;
+	}
 	
 	&__name, &__email, &__msg {
 		margin: 0 auto;
 		display: block;
+		margin-bottom: 30px;
+		border: 0;
+		background: none;
+		border-bottom: 2px solid #9b9b9b;
+		width: 100%;
+		outline: none;
+		color: #bcbcbc;
 	}
 }

@@ -3,6 +3,10 @@
 	&__top {
 		height: 100%;
 		margin-bottom: 20px;
+
+		&--large-b-margin {
+			margin-top: 45px;
+		}
 		
 		@mixin atMedium {
 			height: 100vh;

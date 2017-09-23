@@ -11215,8 +11215,12 @@ var StickyHeader = function () {
 
 		this.btn4 = (0, _jquery2.default)('.btn-4');
 		this.links = (0, _jquery2.default)('a');
+		this.navbar = (0, _jquery2.default)('.nav-bar');
+		this.aboutTop = (0, _jquery2.default)('.about__top');
+		this.pageSections = (0, _jquery2.default)('.page-section');
 		this.onDocLoad();
 		this.addSmoothScrolling();
+		this.createHeaderWaypoint();
 	}
 
 	_createClass(StickyHeader, [{
@@ -11233,6 +11237,48 @@ var StickyHeader = function () {
 			});
 			this.btn4.hover(function () {
 				that.btn4.removeClass('btn-4-load');
+			});
+		}
+	}, {
+		key: 'createHeaderWaypoint',
+		value: function createHeaderWaypoint() {
+			var that = this;
+			new Waypoint({
+				element: this.navbar[0],
+				handler: function handler(direction) {
+					if (direction === 'down') {
+						that.navbar.addClass('nav-bar--is-visible');
+						that.aboutTop.addClass('about__top--large-b-margin');
+					}
+				},
+				offset: '5%'
+			});
+
+			new Waypoint({
+				element: this.navbar[0],
+				handler: function handler(direction) {
+					if (direction === 'up') {
+						that.navbar.removeClass('nav-bar--is-visible');
+						that.aboutTop.removeClass('about__top--large-b-margin');
+					}
+				},
+				offset: '2%'
+			});
+		}
+	}, {
+		key: 'createPageSectionWaypoint',
+		value: function createPageSectionWaypoint() {
+			var _this = this;
+
+			this.pageSection.each(function () {
+				var currentPage = _this;
+				new Waypoint({
+					element: currentPage,
+					handler: function handler() {
+						var matchingLink = currentPage.getAttribute('data-matching-link');
+						(0, _jquery2.default)(currentPage).addClass('current-link');
+					}
+				});
 			});
 		}
 	}]);
