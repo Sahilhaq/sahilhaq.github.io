@@ -6,6 +6,8 @@ class MobileMenu {
     constructor() {
 		this.menuContent = $('.menu-content');
 		this.menuIcon = $('.site-header__menu-icon');
+		this.navBarMenuIcon = $('.nav-bar__menu-icon');
+		this.primaryNav = $('.primary-nav');
 		this.waypointTrigger = $('.about'); 
 		this.createMenuWaypoint();
 		this.event();
@@ -13,11 +15,17 @@ class MobileMenu {
 	
 	event() {
 		this.menuIcon.click(this.toggleClass.bind(this));
+		this.navBarMenuIcon.click(this.navToogleClass.bind(this));
 	}
 	
 	toggleClass() {
 		this.menuContent.toggleClass('menu-content--is-visible');
 		this.menuIcon.toggleClass('menu-icon--close');
+	}
+
+	navToogleClass() {
+		this.primaryNav.toggleClass('primary-nav--is-visible');
+		this.navBarMenuIcon.toggleClass('nav-bar__menu-icon--close')
 	}
 	
 	createMenuWaypoint() {

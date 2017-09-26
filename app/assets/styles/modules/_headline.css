@@ -22,6 +22,10 @@
 	&--sm-b-margin {
 		margin-bottom: 30px;
 	}
+
+	&--large-t-margin {
+		margin-top: 55px;
+	}
 		
 	&:after {
 		display: block;

@@ -78,7 +78,7 @@
 					<div class="nav-bar__menu-icon">
 						<div class="nav-bar__menu-icon__middle"></div>
 					</div>
-					<nav class="nav-bar__primary-nav">
+					<nav class="primary-nav">
 						<ul>
 							<li><a href="#home">Home</a></li>
 							<li><a href="#about" id="about-link">About</a></li>
@@ -90,7 +90,7 @@
 				</div>	
 			</div>	
 	
-			<section id="about" class="page-section" data-matching-link="about-link">
+			<section id="about" class="page-section" data-matching-link="#about-link">
 				<div class="about">
 					<div class="about__top">
 						<div class="wrapper">
@@ -139,7 +139,7 @@
 								<div class="row__medium-4">
 										<div class="about__me__bio media-body waypoint" data-animation="pull-to-right">
 											Hi, i am Sahil Haque, and i am a wizard, 
-											XD just kidding but don't you think programing feels the same, like the code is spell and things that we create is magic! 
+											XD just kidding but programing feels pretty similar, it's like the code is the spell and things that we create is magic! 
 										</div>	
 								</div>
 								<!------------>
@@ -159,6 +159,10 @@
 											<p class="waypoint pull-from-right" data-animation="pull-from-right--is-on"><span class="lang__icon">JQ</span>Jquery</p>
 											<p class="waypoint pull-from-left" data-animation="pull-from-left--is-on"><span class="lang__icon"><i class="ion-social-twitter"></i></span>Bootstrap4</p>
 										</div>
+										<div class="frameworks waypoint" data-animation="pull-to-left">
+											<h3 class="waypoint" data-animation="extend">Database</h3>
+											<p class="waypoint pull-from-right" data-animation="pull-from-right--is-on"><span class="lang__icon">Q</span>mySQL</p>
+										</div>
 									</div>	
 								</div>
 								<!------------>
@@ -166,18 +170,19 @@
 									<div class="about__tools">
 										<div class="tools waypoint" data-animation="pull-to-left">
 											<h3 class="waypoint" data-animation="extend">tools | others</h3>
-											<p><span class="lang__icon">W</span>Webpack</p>
+											<p class="waypoint pull-from-left" data-animation="pull-from-left--is-on"><span class="lang__icon">W</span>Webpack</p>
 											<p class="waypoint pull-from-right" data-animation="pull-from-right--is-on"><span class="lang__icon">G</span>Gulp</p>
-											<p><span class="lang__icon">B</span>Babel</p>
+											<p class="waypoint pull-from-left" data-animation="pull-from-left--is-on"><span class="lang__icon">B</span>Babel</p>
 										</div>
 										<div class="other waypoint" data-animation="pull-to-left">
 											<h3 class="waypoint" data-animation="extend">Others</h3>
 											<p class="waypoint pull-from-right" data-animation="pull-from-right--is-on"><span class="lang__icon"><i class="">G</i></span>Git</p>
-											<p><span class="lang__icon"><i class="ion-social-github"></i></span>github</p>
+											<p class="waypoint pull-from-left" data-animation="pull-from-left--is-on"><span class="lang__icon"><i class="ion-social-github"></i></span>github</p>
 											<p class="waypoint pull-from-right" data-animation="pull-from-right--is-on"><span class="lang__icon"><i class="ion-social-wordpress"></i></span>Wordpress</p>
-											<p><span class="lang__icon">F</span>Firebase</p>
+											<p class="waypoint pull-from-left" data-animation="pull-from-left--is-on"><span class="lang__icon">F</span>Firebase</p>
 											<p class="waypoint pull-from-right" data-animation="pull-from-right--is-on"><span class="lang__icon">J</span>Jsx</p>	
-											<p><span class="lang__icon">X</span>Xml</p>											
+											<p class="waypoint pull-from-left" data-animation="pull-from-left--is-on"><span class="lang__icon">X</span>Xml</p>											
+											<p class="waypoint pull-from-right" data-animation="pull-from-right--is-on"><span class="lang__icon">A</span>Ajax</p>											
 										</div>
 									</div>	
 								</div>
@@ -187,12 +192,14 @@
 					</div>	
 			</section>
 			
-			<section id="portfolio" class="page-section" data-matching-link="portfolio-link">
-
+			<section id="portfolio" class="page-section portfolio" data-matching-link="#portfolio-link">
+				<div class="wrapper">
+					<h1 class="headline">portfolio</h1>
+				</div>
 
 			</section>
 	
-			<section id="contact" class="page-section contact" data-matching-link="contact-link">
+			<section id="contact" class="page-section contact" data-matching-link="#contact-link">
 				<h1 class="headline headline--small headline--sm-b-margin headline--no-after">KEEP IN TOUCH!</h1>
 				<p class="headline__text">I'LL GET BACK TO YOU AS QUICKLY AS POSSIBLE</p>
 
@@ -210,7 +217,9 @@
 				</div>	
 			</section>
 	
-	
+			<footer class="site-footer">
+				
+			</footer>
 	
 			<!-- <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 			<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>

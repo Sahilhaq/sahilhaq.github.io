@@ -11144,6 +11144,8 @@ var MobileMenu = function () {
 
 		this.menuContent = (0, _jquery2.default)('.menu-content');
 		this.menuIcon = (0, _jquery2.default)('.site-header__menu-icon');
+		this.navBarMenuIcon = (0, _jquery2.default)('.nav-bar__menu-icon');
+		this.primaryNav = (0, _jquery2.default)('.primary-nav');
 		this.waypointTrigger = (0, _jquery2.default)('.about');
 		this.createMenuWaypoint();
 		this.event();
@@ -11153,12 +11155,19 @@ var MobileMenu = function () {
 		key: 'event',
 		value: function event() {
 			this.menuIcon.click(this.toggleClass.bind(this));
+			this.navBarMenuIcon.click(this.navToogleClass.bind(this));
 		}
 	}, {
 		key: 'toggleClass',
 		value: function toggleClass() {
 			this.menuContent.toggleClass('menu-content--is-visible');
 			this.menuIcon.toggleClass('menu-icon--close');
+		}
+	}, {
+		key: 'navToogleClass',
+		value: function navToogleClass() {
+			this.primaryNav.toggleClass('primary-nav--is-visible');
+			this.navBarMenuIcon.toggleClass('nav-bar__menu-icon--close');
 		}
 	}, {
 		key: 'createMenuWaypoint',
@@ -11216,11 +11225,14 @@ var StickyHeader = function () {
 		this.btn4 = (0, _jquery2.default)('.btn-4');
 		this.links = (0, _jquery2.default)('a');
 		this.navbar = (0, _jquery2.default)('.nav-bar');
+		this.navLinks = (0, _jquery2.default)('.nav-bar a');
 		this.aboutTop = (0, _jquery2.default)('.about__top');
 		this.pageSections = (0, _jquery2.default)('.page-section');
+		this.portfolioHeadline = (0, _jquery2.default)('.portfolio .headline');
 		this.onDocLoad();
 		this.addSmoothScrolling();
 		this.createHeaderWaypoint();
+		this.createPageSectionWaypoint();
 	}
 
 	_createClass(StickyHeader, [{
@@ -11264,20 +11276,43 @@ var StickyHeader = function () {
 				},
 				offset: '2%'
 			});
+
+			new Waypoint({
+				element: this.portfolioHeadline[0],
+				handler: function handler() {
+					that.portfolioHeadline.toggleClass('headline--large-t-margin');
+				},
+				offset: '30%'
+			});
 		}
 	}, {
 		key: 'createPageSectionWaypoint',
 		value: function createPageSectionWaypoint() {
-			var _this = this;
-
-			this.pageSection.each(function () {
-				var currentPage = _this;
+			var that = this;
+			this.pageSections.each(function () {
+				var currentPage = this;
 				new Waypoint({
 					element: currentPage,
-					handler: function handler() {
-						var matchingLink = currentPage.getAttribute('data-matching-link');
-						(0, _jquery2.default)(currentPage).addClass('current-link');
-					}
+					handler: function handler(direction) {
+						if (direction === 'down') {
+							var matchingLink = currentPage.getAttribute('data-matching-link');
+							that.navLinks.removeClass('current-link');
+							(0, _jquery2.default)(matchingLink).addClass('current-link');
+						}
+					},
+					offset: '40%'
+				});
+
+				new Waypoint({
+					element: currentPage,
+					handler: function handler(direction) {
+						if (direction === 'up') {
+							var matchingLink = currentPage.getAttribute('data-matching-link');
+							that.navLinks.removeClass('current-link');
+							(0, _jquery2.default)(matchingLink).addClass('current-link');
+						}
+					},
+					offset: '-40%'
 				});
 			});
 		}

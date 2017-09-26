@@ -1,9 +1,10 @@
 .wrapper {
     max-width: 1250px;
+    padding-left: 10px;
+    padding-right: 10px; 
     margin: 0 auto;
-    padding-left: 18px;
-    padding-right: 18px; 
-    
+    overflow: hidden;
+
     &--narrow {
         @mixin atMedium {
             max-width: 800px;
