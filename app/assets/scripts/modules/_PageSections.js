@@ -5,6 +5,9 @@ class pageSections {
 	constructor() {
 		this.waypoints = $('.waypoint');
 		this.createAnimationWaypoints();
+		this.footerTrigger = $('.contact');
+		this.footer = $('.site-footer');
+		this.createFooterWaypoint();
 	}
 	
 	createAnimationWaypoints(){
@@ -19,6 +22,18 @@ class pageSections {
 				},
 				offset: '50%'
 			})
+		})
+		
+	}
+
+	createFooterWaypoint() {
+		var that = this;
+		new Waypoint({
+			element: this.footerTrigger[0],
+			handler() {
+				that.footer.toggleClass('site-footer--is-fixed');
+			},
+			offset: '100%'
 		})
 		
 	}

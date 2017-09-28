@@ -16,6 +16,7 @@
 	}
 }
 
+
 .pull-to-left {
 	transform: translateX(0);
 	display: block;
@@ -38,6 +39,17 @@
 			animation-duration: .8s;
 			animation-delay: 1.5s;
 		}
+	}
+}
+
+.for-after {
+	&:after {
+		transform: translate(0);
+		display: block;
+		opacity: 1;
+		animation-name: headline-after;
+		animation-duration: .8s;
+		animation-delay: 1.5s;
 	}
 }
 

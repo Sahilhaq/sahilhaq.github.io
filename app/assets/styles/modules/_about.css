@@ -14,6 +14,10 @@
 			margin-bottom: -80px;
 		}
 	}
+
+	.headline {
+		transition: all .5s .3s ease-out;
+	}
 	
 	&__me-section {
 		margin-top: 80px;
@@ -71,6 +75,7 @@
 	
 	/* about me */
 	&__me {
+		margin-top: 50px;
 		padding-top: 30px;
 		background: $mainBlack;
 		height: 100%;

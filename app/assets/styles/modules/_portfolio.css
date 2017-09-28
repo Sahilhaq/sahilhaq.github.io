@@ -1,0 +1,49 @@
+.portfolio {
+    height: 100%;
+    padding-top: 0; 
+    margin-bottom: 20px;
+
+    &--large-t-padding { padding-top: 60px; }
+
+    &__showcase {
+        max-width: 650px;
+        height: 250px;
+        box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.4),
+                     -2px -2px 10px rgba(0, 0, 0, 0.4); 
+        margin: 20px auto;
+
+        @mixin atSmall {
+            max-width: 500px;
+            height: 300px;
+        }
+                     
+        @mixin atMedium {
+            max-width: 650px;
+            height: 400px;
+        }
+    }
+
+    #slider { overflow: hidden; }
+    #slider figure img { 
+        width: 20%; 
+        height: 250px; 
+        float: left; 
+
+        @mixin atSmall {
+            height: 300px; 
+        }
+
+        @mixin atMedium {
+            height: 400px;
+        }
+    }
+    #slider figure { 
+      position: relative;
+      width: 500%;
+      margin: 0;
+      left: 0;
+      text-align: left;
+      font-size: 0;
+      animation: 20s slidy infinite; 
+    }
+}

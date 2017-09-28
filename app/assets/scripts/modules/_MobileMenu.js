@@ -9,6 +9,7 @@ class MobileMenu {
 		this.navBarMenuIcon = $('.nav-bar__menu-icon');
 		this.primaryNav = $('.primary-nav');
 		this.waypointTrigger = $('.about'); 
+		this.navBarLinks = $('.primary-nav a');
 		this.createMenuWaypoint();
 		this.event();
 	}
@@ -16,6 +17,10 @@ class MobileMenu {
 	event() {
 		this.menuIcon.click(this.toggleClass.bind(this));
 		this.navBarMenuIcon.click(this.navToogleClass.bind(this));
+		this.navBarLinks.click(() => {
+			this.primaryNav.removeClass('primary-nav--is-visible');
+			this.navBarMenuIcon.removeClass('nav-bar__menu-icon--close')
+		});
 	}
 	
 	toggleClass() {

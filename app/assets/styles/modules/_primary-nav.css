@@ -1,7 +1,7 @@
 .primary-nav {
     float: right;
     display: none;
-    background: $mainBlack;
+    background: rgba($mainBlack, .99);
     position: absolute;
     top: 0;
     right: 0;

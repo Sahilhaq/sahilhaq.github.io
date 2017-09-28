@@ -83,20 +83,26 @@
 			}
 			
 			.top {
-				background: rgba($mainBlue, .5);
-				
+				background: rgba(219, 34, 34, 0.88);
+				padding-left: 10px;
 				@mixin atMedium {
+					background: #DB2222;
 					padding-left: 20px;
 					padding-right: 15px;
 				}
 			}
 			
-			@mixin atMedium {
-				.bottom {
+			
+			.bottom {
+				padding-left: 10px;
+				background: rgba($mainBlack, .3);
+				@mixin atMedium {
 					background: rgba($mainBlack, .5);
 					padding-left: 20px;
 				}
+				
 			}
+			
 		}
 	}
 	

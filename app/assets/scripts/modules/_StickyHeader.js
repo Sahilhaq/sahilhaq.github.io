@@ -8,14 +8,19 @@ class StickyHeader {
 		this.links = $('a');
 		this.navbar = $('.nav-bar');
 		this.navLinks = $('.nav-bar a');
-		this.aboutTop = $('.about__top');
 		this.pageSections = $('.page-section');
-		this.portfolioHeadline = $('.portfolio .headline');
+		this.headlines = $('.headline');
 		this.onDocLoad();
 		this.addSmoothScrolling();
 		this.createHeaderWaypoint();
 		this.createPageSectionWaypoint();
+		this.refreshWaypoints();
 	}
+
+	refreshWaypoints(){
+        Waypoint.refreshAll();
+    }
+    
 	
 	addSmoothScrolling() {
 		this.links.smoothScroll();
@@ -34,7 +39,6 @@ class StickyHeader {
 			handler: function(direction) {
 				if(direction === 'down'){
 					that.navbar.addClass('nav-bar--is-visible');
-					that.aboutTop.addClass('about__top--large-b-margin');
 				}
 			},
 			offset: '5%'
@@ -45,20 +49,21 @@ class StickyHeader {
 			handler: function(direction) {
 				if(direction === 'up'){
 					that.navbar.removeClass('nav-bar--is-visible');
-					that.aboutTop.removeClass('about__top--large-b-margin');
 				}
 			},
 			offset: '2%'
 		})
 
-		new Waypoint({
-			element: this.portfolioHeadline[0],
-			handler: () => {
-				that.portfolioHeadline.toggleClass('headline--large-t-margin');
-			},
-			offset: '30%'
+		this.headlines.each(function(){
+			var currentHeadline = this;
+			new Waypoint({
+				element: currentHeadline,
+				handler: () => {
+					$(currentHeadline).toggleClass('headline--large-t-margin');
+				},
+				offset: '30%'
+			})
 		})
-		
 	}
 
 	createPageSectionWaypoint() {
@@ -86,7 +91,7 @@ class StickyHeader {
 						$(matchingLink).addClass('current-link');
 					}
 				},
-				offset: '-40%'
+				offset: '-20%'
 			});
 			
 		})

@@ -11105,13 +11105,18 @@ var _pageSections = __webpack_require__(6);
 
 var _pageSections2 = _interopRequireDefault(_pageSections);
 
-__webpack_require__(7);
+var _ImgSlider = __webpack_require__(7);
+
+var _ImgSlider2 = _interopRequireDefault(_ImgSlider);
+
+__webpack_require__(8);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var mobileMenu = new _MobileMenu2.default();
 var stickyHeader = new _StickyHeader2.default();
 var pageSections = new _pageSections2.default();
+var imgSlider = new _ImgSlider2.default();
 
 /***/ }),
 /* 3 */
@@ -11147,6 +11152,7 @@ var MobileMenu = function () {
 		this.navBarMenuIcon = (0, _jquery2.default)('.nav-bar__menu-icon');
 		this.primaryNav = (0, _jquery2.default)('.primary-nav');
 		this.waypointTrigger = (0, _jquery2.default)('.about');
+		this.navBarLinks = (0, _jquery2.default)('.primary-nav a');
 		this.createMenuWaypoint();
 		this.event();
 	}
@@ -11154,8 +11160,14 @@ var MobileMenu = function () {
 	_createClass(MobileMenu, [{
 		key: 'event',
 		value: function event() {
+			var _this = this;
+
 			this.menuIcon.click(this.toggleClass.bind(this));
 			this.navBarMenuIcon.click(this.navToogleClass.bind(this));
+			this.navBarLinks.click(function () {
+				_this.primaryNav.removeClass('primary-nav--is-visible');
+				_this.navBarMenuIcon.removeClass('nav-bar__menu-icon--close');
+			});
 		}
 	}, {
 		key: 'toggleClass',
@@ -11226,16 +11238,21 @@ var StickyHeader = function () {
 		this.links = (0, _jquery2.default)('a');
 		this.navbar = (0, _jquery2.default)('.nav-bar');
 		this.navLinks = (0, _jquery2.default)('.nav-bar a');
-		this.aboutTop = (0, _jquery2.default)('.about__top');
 		this.pageSections = (0, _jquery2.default)('.page-section');
-		this.portfolioHeadline = (0, _jquery2.default)('.portfolio .headline');
+		this.headlines = (0, _jquery2.default)('.headline');
 		this.onDocLoad();
 		this.addSmoothScrolling();
 		this.createHeaderWaypoint();
 		this.createPageSectionWaypoint();
+		this.refreshWaypoints();
 	}
 
 	_createClass(StickyHeader, [{
+		key: 'refreshWaypoints',
+		value: function refreshWaypoints() {
+			Waypoint.refreshAll();
+		}
+	}, {
 		key: 'addSmoothScrolling',
 		value: function addSmoothScrolling() {
 			this.links.smoothScroll();
@@ -11260,7 +11277,6 @@ var StickyHeader = function () {
 				handler: function handler(direction) {
 					if (direction === 'down') {
 						that.navbar.addClass('nav-bar--is-visible');
-						that.aboutTop.addClass('about__top--large-b-margin');
 					}
 				},
 				offset: '5%'
@@ -11271,18 +11287,20 @@ var StickyHeader = function () {
 				handler: function handler(direction) {
 					if (direction === 'up') {
 						that.navbar.removeClass('nav-bar--is-visible');
-						that.aboutTop.removeClass('about__top--large-b-margin');
 					}
 				},
 				offset: '2%'
 			});
 
-			new Waypoint({
-				element: this.portfolioHeadline[0],
-				handler: function handler() {
-					that.portfolioHeadline.toggleClass('headline--large-t-margin');
-				},
-				offset: '30%'
+			this.headlines.each(function () {
+				var currentHeadline = this;
+				new Waypoint({
+					element: currentHeadline,
+					handler: function handler() {
+						(0, _jquery2.default)(currentHeadline).toggleClass('headline--large-t-margin');
+					},
+					offset: '30%'
+				});
 			});
 		}
 	}, {
@@ -11312,7 +11330,7 @@ var StickyHeader = function () {
 							(0, _jquery2.default)(matchingLink).addClass('current-link');
 						}
 					},
-					offset: '-40%'
+					offset: '-20%'
 				});
 			});
 		}
@@ -11721,6 +11739,9 @@ var pageSections = function () {
 
 		this.waypoints = (0, _jquery2.default)('.waypoint');
 		this.createAnimationWaypoints();
+		this.footerTrigger = (0, _jquery2.default)('.contact');
+		this.footer = (0, _jquery2.default)('.site-footer');
+		this.createFooterWaypoint();
 	}
 
 	_createClass(pageSections, [{
@@ -11739,6 +11760,19 @@ var pageSections = function () {
 				});
 			});
 		}
+	}, {
+		key: 'createFooterWaypoint',
+		value: function createFooterWaypoint() {
+			var that = this;
+			new Waypoint({
+				element: this.footerTrigger[0],
+				handler: function handler() {
+					that.footer.toggleClass('site-footer--is-fixed');
+				},
+
+				offset: '100%'
+			});
+		}
 	}]);
 
 	return pageSections;
@@ -11748,6 +11782,49 @@ exports.default = pageSections;
 
 /***/ }),
 /* 7 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _jquery = __webpack_require__(0);
+
+var _jquery2 = _interopRequireDefault(_jquery);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+var ImgSlider = function () {
+    function ImgSlider() {
+        _classCallCheck(this, ImgSlider);
+
+        this.portfolioShowcase = (0, _jquery2.default)('.portfolio__showcase');
+        this.addImagesToTheDOM();
+    }
+
+    _createClass(ImgSlider, [{
+        key: 'addImagesToTheDOM',
+        value: function addImagesToTheDOM() {
+            var html = '<img src="./assets/images/mikymeals-mac-frame.png" alt="mikeyMeals">';
+
+            this.portfolioShowcase.innerHtml = html;
+        }
+    }]);
+
+    return ImgSlider;
+}();
+
+exports.default = ImgSlider;
+
+/***/ }),
+/* 8 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";

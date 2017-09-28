@@ -517,6 +517,30 @@ body {
 	100% { opacity: 1; -webkit-transform: scale(1); transform: scale(1); }
 }
 
+@-webkit-keyframes slidy {
+	0% { left: 0%; }
+	20% { left: 0%; }
+	25% { left: -100%; }
+	45% { left: -100%; }
+	50% { left: -200%; }
+	70% { left: -200%; }
+	75% { left: -300%; }
+	95% { left: -300%; }
+	100% { left: -400%; }
+}
+
+@keyframes slidy {
+	0% { left: 0%; }
+	20% { left: 0%; }
+	25% { left: -100%; }
+	45% { left: -100%; }
+	50% { left: -200%; }
+	70% { left: -200%; }
+	75% { left: -300%; }
+	95% { left: -300%; }
+	100% { left: -400%; }
+}
+
 #loader-wrapper {
 	position: fixed;
 	top: 0;
@@ -786,7 +810,7 @@ body {
 .primary-nav {
     float: right;
     display: none;
-    background: #27272b;
+    background: rgba(39,39,43, .99);
     position: absolute;
     top: 0;
     right: 0;
@@ -995,22 +1019,32 @@ body {
     }
 
 .large-hero__content__text .top {
-				background: rgba(68,178,226, .5);
+				background: rgba(219, 34, 34, 0.88);
+				padding-left: 10px;
 			}
 
 @media(min-width: 800px){
 
 .large-hero__content__text .top {
+					background: #DB2222;
 					padding-left: 20px;
 					padding-right: 15px
 			}
     }
 
+.large-hero__content__text .bottom {
+				padding-left: 10px;
+				background: rgba(39,39,43, .3);
+				
+			}
+
 @media(min-width: 800px){
-				.large-hero__content__text .bottom {
+
+.large-hero__content__text .bottom {
 					background: rgba(39,39,43, .5);
-					padding-left: 20px;
-				}
+					padding-left: 20px
+				
+			}
     }
 
 .large-hero__more-logo {
@@ -1064,7 +1098,7 @@ body {
 @media(min-width: 800px){
 
 .page-section {
-        padding: 100px 0
+        padding: 80px 0
     
 }
     }
@@ -1137,7 +1171,7 @@ body {
 		text-align: center;
 		font-size: .95rem;
 		margin: 0 auto;
-		margin-bottom: 60px;
+		margin-bottom: 10px;
 		max-width: 500px;
 		color: #a8a8a8;
 		text-transform: lowercase;
@@ -1315,10 +1349,45 @@ body {
 .site-footer {
     -webkit-box-shadow: 0 0 2px #000;
             box-shadow: 0 0 2px #000;
-    background: #27272b;
+    background: #1B1B1B;
     width: 100%;
     height: 40px;
+    padding: 10px 10px 0 20px;
 }
+
+.site-footer--is-fixed {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+    }
+
+.site-footer p {
+        float: left;
+        margin: 0;
+        color: #aaaaaa;
+        font-size: .90rem;
+    }
+
+.site-footer ul {
+        font-style: none;
+        float: right;
+        margin: 0;
+    }
+
+.site-footer li {
+        display: inline-block;
+    }
+
+.site-footer a {
+        text-decoration: none;
+        color: #E41717;
+        font-size: 20px;
+        margin-right: 20px;
+    }
+
+.site-footer span {
+        color: #E41717;
+    }
 
 /* Bounce To Right */
 
@@ -1685,6 +1754,11 @@ body {
 	}
     }
 
+.about .headline {
+		-webkit-transition: all .5s .3s ease-out;
+		transition: all .5s .3s ease-out;
+	}
+
 .about__me-section {
 		margin-top: 80px;
 		background: #27272b;
@@ -1747,6 +1821,7 @@ body {
 /* about me */
 
 .about__me {
+		margin-top: 50px;
 		padding-top: 30px;
 		background: #27272b;
 		height: 100%;
@@ -1848,7 +1923,7 @@ body {
 
 .contact {
 	background: #27272b;
-	height: 100vh;
+	height: 100%;
 }
 
 .contact__form {
@@ -1857,27 +1932,122 @@ body {
 	}
 
 .contact label {
-		top: -7px;
+		color: red;
 	}
 
 .contact__name, .contact__email, .contact__msg {
-		margin: 0 auto;
+		background: #404040;
 		display: block;
-		margin-bottom: 30px;
-		border: 0;
-		background: none;
-		border-bottom: 2px solid #9b9b9b;
 		width: 100%;
-		outline: none;
-		color: #bcbcbc;
+		margin-top: 30px;
+		padding: 5px;
+		text-indent: 5px;
+		border: none;
+		border-radius: 1px;
+		border: 1px solid #d3d1d1;
+		outline-color: #44b2e2;
+		color: #ffffff;
+	}
+
+.contact__name {
+		letter-spacing: 2px;
+		text-transform: uppercase;
+	}
+
+.contact__msg {
+		min-height: 75px;
+		max-height: 90px;
+		max-width: 100%;
+		overflow-Y: scroll;	
+	}
+
+.contact__msg::-webkit-scrollbar {
+			width: 10px;
+			background-color: #F5F5F5;
+		}
+
+.contact__msg::-webkit-scrollbar-track {
+			-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5);
+			border-radius: 2px;
+			background-color: rgba(14, 14, 14, 0.4);
+		}
+
+.contact__msg::-webkit-scrollbar-thumb {
+			border-radius: 10px;
+			-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+			background-color: #555;
+		}
+
+.contact__btn {
+		margin-top: 20px;
 	}
 
 .portfolio {
-    height: 100vh;
-    padding-top: 0;
+    height: 100%;
+    padding-top: 0; 
+    margin-bottom: 20px;
 }
 
 .portfolio--large-t-padding { padding-top: 60px; }
+
+.portfolio__showcase {
+        max-width: 650px;
+        height: 250px;
+        -webkit-box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.4),
+                     -2px -2px 10px rgba(0, 0, 0, 0.4);
+                box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.4),
+                     -2px -2px 10px rgba(0, 0, 0, 0.4); 
+        margin: 20px auto;
+    }
+
+@media(min-width: 500px){
+
+.portfolio__showcase {
+            max-width: 500px;
+            height: 300px
+    }
+    }
+
+@media(min-width: 800px){
+
+.portfolio__showcase {
+            max-width: 650px;
+            height: 400px
+    }
+    }
+
+.portfolio #slider { overflow: hidden; }
+
+.portfolio #slider figure img { 
+        width: 20%; 
+        height: 250px; 
+        float: left;
+    }
+
+@media(min-width: 500px){
+
+.portfolio #slider figure img {
+            height: 300px
+    }
+    }
+
+@media(min-width: 800px){
+
+.portfolio #slider figure img {
+            height: 400px
+    }
+    }
+
+.portfolio #slider figure { 
+      position: relative;
+      width: 500%;
+      margin: 0;
+      left: 0;
+      text-align: left;
+      font-size: 0;
+      -webkit-animation: 20s slidy infinite;
+              animation: 20s slidy infinite; 
+    }
 
 /* WAYPOINT ANIMATIONS */
 
@@ -1936,6 +2106,19 @@ body {
 			-webkit-animation-delay: 1.5s;
 			        animation-delay: 1.5s;
 		}
+
+.for-after:after {
+		-webkit-transform: translate(0);
+		        transform: translate(0);
+		display: block;
+		opacity: 1;
+		-webkit-animation-name: headline-after;
+		        animation-name: headline-after;
+		-webkit-animation-duration: .8s;
+		        animation-duration: .8s;
+		-webkit-animation-delay: 1.5s;
+		        animation-delay: 1.5s;
+	}
 
 .pull-from-left {
 	-webkit-transform: translateX(100%);
