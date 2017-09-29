@@ -9,9 +9,9 @@
 		}
 		
 		@mixin atMedium {
-			height: 100vh;
+			height: 100%;
 			margin-bottom: 0;
-			margin-bottom: -80px;
+			margin-bottom: 200px;
 		}
 	}
 
@@ -83,7 +83,7 @@
 		box-shadow: 0 0 5px rgba(0, 0, 0, 0.71);
 		
 		@mixin atMedium {
-			height: 100vh;
+			height: 100%;
 			padding-bottom: 0;
 		}
 		

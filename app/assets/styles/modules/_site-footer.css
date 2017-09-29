@@ -2,8 +2,12 @@
     box-shadow: 0 0 2px #000;
     background: #1B1B1B;
     width: 100%;
-    height: 40px;
+    height: 60px;
     padding: 10px 10px 0 20px;
+
+    @mixin atSmall {
+        height: 40px;
+    }
 
     &--is-fixed {
         position: fixed;
@@ -12,16 +16,30 @@
     }
 
     p {
-        float: left;
-        margin: 0;
+        margin: 0 auto;
         color: #aaaaaa;
         font-size: .90rem;
+        display: block;
+        text-align: center;
+        margin-bottom: 6px;
+        padding-left: 15px;
+
+        @mixin atSmall {
+            padding-left: 0;
+            margin-bottom: 0;
+            float: left;
+            display: inline-block;
+        }
     }
 
     ul {
-        font-style: none;
-        float: right;
         margin: 0;
+        font-style: none;
+        text-align: center;
+        @mixin atSmall {
+            float: right;
+            display: inline-block;
+        }
     }
 
     li {
