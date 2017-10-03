@@ -1,9 +1,0 @@
-body {
-     font-family: 'Roboto', 'Arial', sans-serif;
-	text-rendering: optimizeLegibility; 
-    color: #555;
-}
-
-* {
-    box-sizing: border-box;
-}
