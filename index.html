@@ -5,6 +5,7 @@
 			<meta name="viewport" content="width=device-width, initial-scale=1.0">
 			<meta name="description" content="Full stack web developer portfolio of Sahil haque">
 			<title>SahilHaque</title>
+			<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
 			
 			<link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,500" rel="stylesheet">
 			<link rel="stylesheet" href="./assets/vendor/icons/css/ionicons.min.css">
@@ -58,6 +59,7 @@
 						</div>	
 					</div>
 					<p>Creative and responsive</p>
+					
 				</div>	
 				<div class="large-hero__more-logo">
 					<a href="#about"><i class="ion-code-download"></i></a></div>
@@ -171,13 +173,13 @@
 								<div class="row__medium-4">
 									<div class="about__tools">
 										<div class="tools waypoint" data-animation="pull-to-left">
-											<h3 class="waypoint" data-animation="extend">tools | others</h3>
+											<h3 class="waypoint" data-animation="extend">tools</h3>
 											<p class="waypoint pull-from-left" data-animation="pull-from-left--is-on"><span class="lang__icon">W</span>Webpack</p>
 											<p class="waypoint pull-from-right" data-animation="pull-from-right--is-on"><span class="lang__icon">G</span>Gulp</p>
 											<p class="waypoint pull-from-left" data-animation="pull-from-left--is-on"><span class="lang__icon">B</span>Babel</p>
 										</div>
 										<div class="other waypoint" data-animation="pull-to-left">
-											<h3 class="waypoint" data-animation="extend">Others</h3>
+											<h3 class="waypoint" data-animation="extend">Others <span style="text-transform: lowercase;">(basic knowladge)</span></h3>
 											<p class="waypoint pull-from-right" data-animation="pull-from-right--is-on"><span class="lang__icon"><i class="">G</i></span>Git</p>
 											<p class="waypoint pull-from-left" data-animation="pull-from-left--is-on"><span class="lang__icon"><i class="ion-social-github"></i></span>github</p>
 											<p class="waypoint pull-from-right" data-animation="pull-from-right--is-on"><span class="lang__icon"><i class="ion-social-wordpress"></i></span>Wordpress</p>
@@ -204,7 +206,7 @@
 					<h1 class="headline headline--sm-b-margin">portfolio</h1>
 				</div>
 
-				<div class="wrapper">
+				<!-- <div class="wrapper">
 					<div class="portfolio__showcase">
 						<div id="slider">
 							<button class="prev">Prev</button>
@@ -214,8 +216,63 @@
 							</figure>
 						</div>
 					</div>
+				</div> -->
+				<div class="container">
+					<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+						<ol class="carousel-indicators">
+						<li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+						<li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+						<li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+						<li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
+						<li data-target="#carouselExampleIndicators" data-slide-to="4"></li>
+						<li data-target="#carouselExampleIndicators" data-slide-to="5"></li>
+						<li data-target="#carouselExampleIndicators" data-slide-to="6"></li>
+						<li data-target="#carouselExampleIndicators" data-slide-to="7"></li>
+						<li data-target="#carouselExampleIndicators" data-slide-to="8"></li>
+						<li data-target="#carouselExampleIndicators" data-slide-to="9"></li>
+						</ol>
+						<div class="carousel-inner">
+						<div class="carousel-item active">
+							<img class="d-block w-100" src="./assets/images/s1.png" alt="slide 1">
+						</div>
+						<div class="carousel-item">
+							<img class="d-block w-100" src="./assets/images/s2.png" alt="slide 2">
+						</div>
+						<div class="carousel-item">
+							<img class="d-block w-100" src="./assets/images/s3.png" alt="slide 3">
+						</div>
+						<div class="carousel-item">
+							<img class="d-block w-100" src="./assets/images/s4.png" alt="slide 4">
+						</div>
+						<div class="carousel-item">
+							<img class="d-block w-100" src="./assets/images/s5.png" alt="slide 5">
+						</div>
+						<div class="carousel-item">
+							<img class="d-block w-100" src="./assets/images/s6.png" alt="slide 6">
+						</div>
+						<div class="carousel-item">
+							<img class="d-block w-100" src="./assets/images/s7.png" alt="slide 7">
+						</div>
+						<div class="carousel-item">
+							<img class="d-block w-100" src="./assets/images/s8.png" alt="slide 8">
+						</div>
+						<div class="carousel-item">
+							<img class="d-block w-100" src="./assets/images/s9.png" alt="slide 9">
+						</div>
+						<div class="carousel-item">
+							<img class="d-block w-100" src="./assets/images/s10.png" alt="slide 10">
+						</div>
+						</div>
+						<a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+						<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+						<span class="sr-only">Previous</span>
+						</a>
+						<a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+						<span class="carousel-control-next-icon" aria-hidden="true"></span>
+						<span class="sr-only">Next</span>
+						</a>
+					</div>
 				</div>
-
 			</section>
 			<!------------------------------>
 			<section id="contact" class="page-section contact" data-matching-link="#contact-link">
@@ -223,7 +280,7 @@
 				<p class="headline__text">I'LL GET BACK TO YOU AS QUICKLY AS POSSIBLE</p>
 
 				<div class="wrapper">
-					<form class="contact__form" name="contact_form">
+					<form method="POST" action="mailto:sahilhaque24.10@gmail.com"  class="contact__form" name="contact_form">
 							 <input class="contact__name" type="text" name="name" placeholder="NAME" required>
 							 <input class="contact__email" type="text" name="email" placeholder="MAIL" required>
 							 <textarea class="contact__msg" name="message" placeholder="MESSAGE" req></textarea>
@@ -235,6 +292,7 @@
 			<footer class="site-footer">
 				<div class="wrapper">
 						<p>Sahilhaque <span>&copy</span> 2017</p>
+						
 						<ul>
 							<li><a href="https://www.facebook.com/Responsive-Website-120239888662512/" target="_blank"><i class="ion-social-facebook"></i></a></li>
 							<li><a href="https://twitter.com/SahilHaque10/" target="_blank"><i class="ion-social-twitter"></i></a></li>
@@ -244,9 +302,9 @@
 				</div>
 			</footer>
 	
-			<!-- <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+			<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 			<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
-			<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script> -->
+			<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
 			<script src="./assets/scripts/App-ef8690b215.js"></script>
 
 			<script src="./assets/scripts/Vendor-b924358024.js"></script>

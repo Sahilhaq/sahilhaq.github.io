@@ -831,7 +831,7 @@ body {
         position: relative;
         top: none;
         right: none;
-        height: inherit;
+        height: 50px;
         width: inherit;
         -webkit-transform: translateX(0);
                 transform: translateX(0)
@@ -1353,12 +1353,16 @@ body {
     width: 100%;
     height: 60px;
     padding: 10px 10px 0 20px;
+
+    
 }
 
 @media(min-width: 500px){
 
 .site-footer {
         height: 40px
+
+    
 }
     }
 
@@ -1416,6 +1420,10 @@ body {
 .site-footer span {
         color: #E41717;
     }
+
+.no-red {
+    text-transform: lowercase !important;
+}
 
 /* Bounce To Right */
 
@@ -2012,10 +2020,17 @@ body {
 	}
 
 .portfolio {
-    height: 100%;
+    height: 400px;
     padding-top: 0; 
     margin-bottom: 20px;
 }
+
+@media(min-width: 800px){
+
+.portfolio {
+        height: 900px
+}
+    }
 
 .portfolio--large-t-padding { padding-top: 60px; }
 
@@ -2103,6 +2118,17 @@ body {
 
 .portfolio .prev {
         left: 0;
+    }
+
+.carousel-item {
+    height: 100%;
+}
+
+@media(min-width: 800px){
+
+.carousel-item {
+        height: 100%
+}
     }
 
 /* WAYPOINT ANIMATIONS */
